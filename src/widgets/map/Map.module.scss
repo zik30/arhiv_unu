@@ -1,0 +1,79 @@
+.wrapper {
+  position: relative;
+  z-index: 1;
+
+  .controls {
+    margin: 20px;
+    position: absolute;
+    z-index: 10;
+    inset: 0;
+    pointer-events: none;
+
+    .activeSidebar {
+      max-height: 770px;
+      height: 100%;
+      z-index: 10;
+
+      input {
+        margin-bottom: 15px;
+      }
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 110px;
+      max-width: 400px;
+      padding: 20px;
+      border-radius: 16px;
+      background-color: var(--white);
+      pointer-events: auto;
+      overflow-y: auto;
+      scrollbar-color: var(--grey03) #ffffff00;
+
+      .results {
+        display: grid;
+        gap: 8px;
+
+        & > div {
+          min-height: 70px;
+          padding: 10px;
+          border-radius: 16px;
+          background-color: var(--grey05);
+          cursor: pointer;
+        }
+      }
+    }
+
+    .filterButtons {
+      position: sticky;
+      top: 90%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      pointer-events: auto;
+
+      button {
+        color: var(--grey02);
+        padding: 16px;
+        width: auto;
+
+        * {
+          font-size: 16px;
+          line-height: 160%;
+        }
+
+        &:hover {
+          color: var(--white);
+          background-color: var(--grey01);
+        }
+      }
+    }
+
+    .activeButtons {
+      justify-content: end;
+      top: unset;
+      bottom: 20px;
+      margin-top: -55px;
+    }
+  }
+}

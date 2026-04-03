@@ -1,0 +1,18 @@
+.controlButtons {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  pointer-events: auto;
+  display: grid;
+  gap: 24px;
+  grid-template-rows: 136px;
+  z-index: 2000;
+
+  * {
+    fill: #0d0d0d;
+  }
+
+  :hover * {
+    fill: var(--white);
+  }
+}

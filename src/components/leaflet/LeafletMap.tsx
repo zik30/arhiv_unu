@@ -2,13 +2,13 @@ import styles from './LeafletMap.module.scss';
 import { Map as LeafletMapInstance } from 'leaflet';
 import { forwardRef } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
-import { LeafletMapControlButtons } from 'features/leafletMapControlButtons';
-import { LeafletMarkerCluster } from 'features/leafletMarkerCluster';
 import 'leaflet.markercluster';
 import { Typography } from 'shared/ui/typography/Typography';
 import type { MapProps } from './types';
 import { useGetMapLibs } from './useGetMapLibs';
 import { latLngZoom } from 'shared/consts';
+import { LeafletMapControlButtons } from 'shared/ui/leaflet/leafletMapControlButtons';
+import { LeafletMarkerCluster } from 'shared/ui/leaflet/leafletMarkerCluster';
 
 export const LeafletMap = forwardRef<LeafletMapInstance | null, MapProps>(
   ({ filter }, ref) => {
