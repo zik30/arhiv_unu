@@ -4,23 +4,23 @@ export const tokens = { access: 'access_token', refresh: 'refresh_token' };
 
 export const nav_bar = [
   {
-    label: 'About',
-    to: '/about',
-  },
-  {
-    label: 'Features',
-    to: '/features',
-  },
-  {
-    label: 'Pricing',
-    to: '/pricing',
-  },
-  {
-    label: 'Gallery',
+    label: 'Галлерея',
     to: '/gallery',
   },
   {
-    label: 'Team',
-    to: '/team',
+    label: 'Карта',
+    to: '/map',
+  },
+  {
+    label: 'Чат',
+    to: '/chat',
   },
 ];
+
+export const latLngZoom = {
+  positions: {
+    lat: 42.86,
+    lng: 74.602,
+  },
+  zoom: 13,
+};

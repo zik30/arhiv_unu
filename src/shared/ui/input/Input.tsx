@@ -56,11 +56,15 @@ export const CustomInput: FC<InputProps> = ({
 
   const renderRightIcon = () => {
     if (type === 'password') {
-      return showPassword ? <EyeClosed /> : <Eye />;
+      return showPassword ? (
+        <EyeClosed color='var(--grey02)' />
+      ) : (
+        <Eye color='var(--grey02)' />
+      );
     }
 
     if (type === 'text' && hasValue) {
-      return <X height={14} width={14} />;
+      return <X height={24} width={24} color='var(--grey02)' />;
     }
 
     return null;

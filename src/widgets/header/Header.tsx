@@ -21,8 +21,12 @@ export const Header: FC = () => {
           </ul>
         </nav>
         <div className={styles.btns}>
-          <Button variant='outlined'>Log In</Button>
-          <Button>Register</Button>
+          <Link to={'/auth/login'}>
+            <Button variant='outlined'>Log In</Button>
+          </Link>
+          <Link to={'/auth/registration'}>
+            <Button>Register</Button>
+          </Link>
         </div>
       </div>
     </header>

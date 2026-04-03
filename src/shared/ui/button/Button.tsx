@@ -12,6 +12,7 @@ interface ButtonProps {
   fullWidth?: boolean;
   icon?: ReactNode;
   className?: string;
+  type?: 'button' | 'submit' | 'reset';
 }
 
 export const Button: FC<ButtonProps> = ({
@@ -23,6 +24,7 @@ export const Button: FC<ButtonProps> = ({
   fullWidth = false,
   icon,
   className = '',
+  type = 'button',
 }) => {
   const buttonClasses = classNames(
     styles.button,
@@ -35,9 +37,14 @@ export const Button: FC<ButtonProps> = ({
   const isTextChild =
     typeof children === 'string' || typeof children === 'number';
   return (
-    <button className={buttonClasses} onClick={onClick} disabled={disabled}>
+    <button
+      type={type}
+      className={buttonClasses}
+      onClick={onClick}
+      disabled={disabled}
+    >
       {isTextChild ? (
-        <Typography variant='bodyText' weight='semiBold'>
+        <Typography align='center' variant='bodyText' weight='semiBold'>
           {children}
         </Typography>
       ) : (

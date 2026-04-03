@@ -1,12 +1,14 @@
 .header {
   height: 80px;
   position: fixed;
+  z-index: 10000;
   display: flex;
   align-items: center;
   justify-content: center;
   top: 0;
   left: 0;
   width: 100%;
+  background-color: var(--white);
   box-shadow: var(--shadow01);
 
   .container {

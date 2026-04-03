@@ -9,7 +9,7 @@ export type ITVariants =
   | 'h4'
   | 'bodyText'
   | 'bodyText2'
-  | 'bodyText3'
+  | 'h5'
   | 'smallText';
 
 export type ITColors =
@@ -20,6 +20,7 @@ export type ITColors =
   | 'grey02'
   | 'grey03'
   | 'bg2'
+  | 'error'
   | 'primary';
 
 export type ITWeights =
@@ -68,7 +69,7 @@ export const Typography: FC<ITTypography> = (props) => {
     h4: 'h4',
     bodyText: 'p',
     bodyText2: 'p',
-    bodyText3: 'p',
+    h5: 'h5',
     smallText: 'p',
   };
 

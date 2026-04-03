@@ -1,0 +1,22 @@
+.searchWidget {
+  margin-top: 150px;
+
+  .searchContainer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 40px;
+
+    .searchInput {
+      width: 400px;
+      height: 50px;
+      border-radius: 25px;
+      border: 1px solid var(--gray);
+      padding: 0 20px;
+      font-size: 16px;
+    }
+    .btn {
+      width: 172px;
+    }
+  }
+}
