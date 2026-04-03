@@ -1,0 +1,49 @@
+.heroSection {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background-image: url(../../shared/assets/repressionPeople.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  padding-bottom: 150px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+  }
+}
+
+.content {
+  text-align: center;
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.searchContainer {
+  display: flex;
+  gap: 12px;
+  margin-top: 40px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.searchInput {
+  flex: 1;
+}
+
+.searchButton {
+  flex-shrink: 0;
+}

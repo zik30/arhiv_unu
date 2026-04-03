@@ -1,0 +1,17 @@
+.chatPage {
+  display: flex;
+  height: calc(100vh - 80px);
+  background-color: #f5f5f5;
+}
+
+.sidebar {
+  width: 260px;
+}
+
+.mainContent {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}

@@ -1,13 +1,13 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { Layout } from './layout/Layout';
 import HomePage from 'pages/HomePage';
-import ChatPage from 'pages/chat/ChatPage';
 import MapPage from 'pages/MapPage';
 import GalleryPage from 'pages/GalleryPage';
 import { AuthLayout } from 'components/authLayout/AuthLayout';
 import LoginPage from 'pages/login/LoginPage';
 import RegistrationPage from 'pages/registration/RegistrationPage';
 import GalleryDetailPage from 'pages/GalleryDetailPage';
+import { ChatPage } from 'pages/chat/ChatPage';
 
 export const router = () =>
   createBrowserRouter([
