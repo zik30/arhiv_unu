@@ -1,0 +1,111 @@
+.h1 {
+  font-size: 26px;
+  line-height: 28px;
+  font-weight: 700;
+}
+
+.h2 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 800;
+}
+
+.h3 {
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 600;
+}
+
+.h4 {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 800;
+}
+
+.bodyText {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+.bodyText2 {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.bodyText3 {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+.smallText {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 500;
+}
+
+.light {
+  font-weight: 300;
+}
+.regular {
+  font-weight: 400;
+}
+.medium {
+  font-weight: 500;
+}
+.semiBold {
+  font-weight: 600;
+}
+.bold {
+  font-weight: 700;
+}
+.extraBold {
+  font-weight: 800;
+}
+
+.black {
+  color: var(--black);
+}
+.white {
+  color: var(--white);
+}
+.grey01 {
+  color: var(--grey01);
+}
+.grey02 {
+  color: var(--grey02);
+}
+.grey03 {
+  color: var(--grey03);
+}
+.bg2 {
+  color: var(--bg2);
+}
+.primary {
+  color: var(--primary);
+}
+.secondary {
+  color: var(--secondary);
+}
+
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}
+.center {
+  text-align: center;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+.lowercase {
+  text-transform: lowercase;
+}
+.capitalize {
+  text-transform: capitalize;
+}

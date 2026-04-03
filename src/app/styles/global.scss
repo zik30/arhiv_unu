@@ -1,0 +1,10 @@
+@use './null.scss';
+@use './mixins.scss';
+@use './var.scss';
+
+html,
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--mainBG);
+  font-size: 16px;
+}

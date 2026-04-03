@@ -1,0 +1,121 @@
+.inputWrapper {
+  display: relative;
+  width: auto;
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  max-width: 400px;
+  padding: 16px 12px;
+
+  background: none;
+  border-radius: 8px;
+  border: 1px solid var(--grey02);
+
+  transition:
+    border 0.2s ease,
+    box-shadow 0.2s ease;
+
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  color: var(--black);
+
+  &::placeholder {
+    font-size: 16px;
+    line-height: 24;
+    font-weight: 400;
+    color: var(--grey02);
+    transition: color 0.2s ease;
+  }
+
+  &:hover {
+    border-color: var(--grey03);
+    &::placeholder {
+      color: var(--grey01);
+    }
+  }
+
+  &:focus {
+    border-color: var(--green03);
+  }
+
+  &:focus::placeholder {
+    color: var(--green01);
+  }
+}
+
+.search {
+  width: 352px;
+  background-color: var(--white);
+  border-radius: 12px;
+  border: none;
+  box-shadow: var(--shadow01);
+
+  &::placeholder {
+    color: var(--grey03);
+    transition: color 0.2s ease;
+  }
+
+  &:hover {
+    border-color: var(--grey03);
+    &::placeholder {
+      color: var(--grey01);
+    }
+  }
+
+  &:focus {
+    border-color: var(--green03);
+    &::placeholder {
+      color: var(--green01);
+    }
+  }
+}
+
+.fullWidth {
+  display: block;
+  width: 100%;
+}
+
+.error {
+  border-color: var(--error);
+
+  &:focus {
+    border-color: var(--error);
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.1);
+  }
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.inputIcon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--grey500);
+}
+
+.right {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.withIcon {
+  padding: 12px 48px 12px 32px;
+}
+
+.password {
+  padding-right: 48px;
+}

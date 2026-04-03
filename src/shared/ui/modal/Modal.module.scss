@@ -1,0 +1,84 @@
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+.wrapper {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.inner {
+  background: var(--grey000);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  padding: 32px 24px 24px 24px;
+  width: 629px;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.3s ease-out;
+}
+
+.innerClosing {
+  background: var(--grey000);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  padding: 32px 24px 24px 24px;
+  width: 629px;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  animation: slideOut 0.3s ease-out;
+}
+
+.modalContent {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding-bottom: 72px;
+}
+
+.fixedBtn {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  width: calc(100% - 48px);
+  z-index: 2;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #888;
+  cursor: pointer;
+  z-index: 1;
+}

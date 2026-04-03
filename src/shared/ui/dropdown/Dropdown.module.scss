@@ -1,0 +1,44 @@
+.dropdown {
+  position: relative;
+
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+
+    .icon {
+      transition: 0.2s;
+      &.open {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .options {
+    overflow: hidden;
+    padding: 0 20px;
+    position: absolute;
+    z-index: 100;
+    top: 30px;
+    background-color: var(--mainBG);
+    max-height: 0px;
+    transition: all 0.3s;
+    border-radius: 8px;
+
+    &.open {
+      padding: 20;
+      max-height: 300px;
+      transition: all 0.3s;
+    }
+
+    .option {
+      cursor: pointer;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      &:not(:last-child) {
+        border-bottom: 1px solid var(--grey04);
+      }
+    }
+  }
+}
