@@ -1,59 +1,17 @@
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
+@use 'app/styles/mixins' as *;
 
-@keyframes slideOut {
-  from {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-}
-
-.wrapper {
+.wrapperModal {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.45);
-  z-index: 1000;
+  z-index: 10000;
   display: flex;
   align-items: center;
-  justify-content: end;
-}
+  justify-content: center;
 
-.inner {
-  background: var(--grey000);
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
-  padding: 32px 24px 24px 24px;
-  width: 629px;
-  height: 100vh;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  animation: slideIn 0.3s ease-out;
-}
-
-.innerClosing {
-  background: var(--grey000);
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
-  padding: 32px 24px 24px 24px;
-  width: 629px;
-  height: 100vh;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  animation: slideOut 0.3s ease-out;
+  @include breakpoint('mobile') {
+    padding: 16px;
+  }
 }
 
 .modalContent {

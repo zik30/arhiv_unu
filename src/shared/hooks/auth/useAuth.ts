@@ -2,28 +2,25 @@ import { BASE_URL, tokens, user } from '../../consts';
 import { $authApi } from '../../lib/requester';
 import axios from 'axios';
 import { create } from 'zustand';
-import type { AuthState, LoginResponse, MeResponse, UserData } from './types';
+import type { AuthState, LoginResponse, MeResponse } from './types';
 
 export const useAuth = create<AuthState>((set, get) => ({
   // isAuth: !!localStorage.getItem(tokens.access),
   isAuth: true,
   isLoggingOut: false,
   isLoadingUser: false,
-  user: null,
-  username: null,
-
-  setUsername: (username: string) => set({ username }),
-
-  setUser: (user: UserData) => set({ user, username: user.username }),
+  email: null,
 
   setAuth: (isAuth: boolean) => {
     set({ isAuth });
     if (!isAuth) {
       localStorage.removeItem(tokens.access);
       localStorage.removeItem(tokens.refresh);
-      set({ user: null, username: null });
+      set({ email: null });
     }
   },
+
+  setEmail: (email: string | null) => set({ email }),
 
   login: async (response: { data: LoginResponse }) => {
     const { access_token, refresh_token } = response.data;
@@ -46,7 +43,7 @@ export const useAuth = create<AuthState>((set, get) => ({
     localStorage.removeItem(tokens.access);
     localStorage.removeItem(tokens.refresh);
     sessionStorage.removeItem(user.email);
-    set({ isAuth: false, user: null, username: null });
+    set({ isAuth: false, email: null });
 
     setTimeout(() => set({ isLoggingOut: false }), 1000);
   },
@@ -80,7 +77,7 @@ export const useAuth = create<AuthState>((set, get) => ({
       set({ isLoadingUser: true });
       const response = await $authApi.get<MeResponse>('/auth/me');
       const userData = response.data;
-      set({ user: userData, username: userData.username });
+      set({ email: userData.email });
     } catch (error) {
       console.error('Ошибка при получении данных пользователя:', error);
     } finally {

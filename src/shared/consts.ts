@@ -4,16 +4,20 @@ export const tokens = { access: 'access_token', refresh: 'refresh_token' };
 
 export const nav_bar = [
   {
-    label: 'Галлерея',
+    label: 'nav.gallery',
     to: '/gallery',
   },
   {
-    label: 'Карта',
+    label: 'nav.map',
     to: '/map',
   },
   {
-    label: 'Чат',
+    label: 'nav.chat',
     to: '/chat',
+  },
+  {
+    label: 'nav.create',
+    to: '/create',
   },
 ];
 
@@ -34,6 +38,9 @@ export const mapRegions = [
   'Иссык-Куль',
   'Джалал-Абад',
   'Баткен',
-  'О.Ош',
-  'Токтогул',
+];
+
+export const langOptiions = [
+  { label: 'Руc', value: 'ru' },
+  { label: 'Кыр', value: 'ky' },
 ];

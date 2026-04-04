@@ -157,13 +157,14 @@ import { Typography } from 'shared/ui/typography/Typography';
 import { Button } from 'shared/ui/button/Button';
 import { LeafletMap } from 'components/leaflet/LeafletMap';
 import { mapRegions } from 'shared/consts';
+import { useTranslation } from 'react-i18next';
 
 export const Map: FC = () => {
   const [search, setSearch] = useState('');
   const [activeRegion, setActiveRegion] = useState<string | null>(null);
   const [isActive, setIsActive] = useState(false);
   const mapRef = useRef<LeafletMapInstance | null>(null);
-
+  const { t } = useTranslation();
   const { data } = useGetMapLibs();
 
   const dataToUse = data && data.length > 0 ? data : mockData;
@@ -211,7 +212,7 @@ export const Map: FC = () => {
             )}
           >
             <CustomInput
-              placeholder='Поиск'
+              placeholder={t('placeholders.search')}
               onChange={inputTextHandler}
               value={search}
               onFocus={inputScrollHandler}

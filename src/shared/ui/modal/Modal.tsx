@@ -1,6 +1,6 @@
 import styles from './Modal.module.scss';
 import { createPortal } from 'react-dom';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import type { FC, ReactNode } from 'react';
 
 interface IModal {
@@ -9,13 +9,8 @@ interface IModal {
 }
 
 export const Modal: FC<IModal> = ({ onClose, children }) => {
-  const [isClosing, setIsClosing] = useState(false);
-
   const handleClose = () => {
-    setIsClosing(true);
-    setTimeout(() => {
-      onClose();
-    }, 300);
+    onClose();
   };
 
   const handleClickOutside = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -32,11 +27,8 @@ export const Modal: FC<IModal> = ({ onClose, children }) => {
   }, []);
 
   return createPortal(
-    <div className={styles.wrapper} onClick={handleClickOutside}>
-      <div className={isClosing ? styles.innerClosing : styles.inner}>
-        <button className={styles.closeBtn} onClick={handleClose}>
-          ✕
-        </button>
+    <div className={styles.wrapperModal} onClick={handleClickOutside}>
+      <div className={styles.inner}>
         <div className={styles.modalContent}>{children}</div>
       </div>
     </div>,

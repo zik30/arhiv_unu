@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import styles from './ChatSidebar.module.scss';
 import { Button } from 'shared/ui/button/Button';
 import { Typography } from 'shared/ui/typography/Typography';
+import { useTranslation } from 'react-i18next';
 
 const chats = [
   {
@@ -32,16 +33,17 @@ const chats = [
 ];
 
 export const ChatSidebar: FC = () => {
+  const { t } = useTranslation();
   return (
     <section className={styles.chatSidebar}>
       <div className={styles.top}>
         <Button variant='nav' fullWidth>
-          Новый чат
+          {t('btns.newChat')}
         </Button>
       </div>
       <div className={styles.middle}>
         <Typography align='center' variant='bodyText2' color='grey03'>
-          Ваши чаты
+          {t('titles.yourChats')}
         </Typography>
         <div className={styles.chatList}>
           {chats.map((chat) => (

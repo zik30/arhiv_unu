@@ -14,6 +14,7 @@ interface DropdownI {
   placeholder?: string;
   options: OptionT[];
   onChange: (val: string) => void;
+  className?: string;
 }
 
 export const Dropdown: FC<DropdownI> = ({
@@ -21,6 +22,7 @@ export const Dropdown: FC<DropdownI> = ({
   placeholder,
   options,
   onChange,
+  className,
 }) => {
   const [open, setOpen] = useState(false);
   const handleChange = (value: string) => {
@@ -28,7 +30,7 @@ export const Dropdown: FC<DropdownI> = ({
     onChange(value);
   };
   return (
-    <div className={styles.dropdown}>
+    <div className={classNames(styles.dropdown, className)}>
       <div onClick={() => setOpen(!open)} className={styles.item}>
         <Typography variant='bodyText' color='secondary' weight='semiBold'>
           {selected ? selected : placeholder}

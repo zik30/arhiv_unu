@@ -1,4 +1,17 @@
+@use 'app/styles/mixins' as *;
+
 .container {
   width: 1240px;
   margin: 0 auto;
+  padding: 0 20px;
+
+  @include breakpoint('tablet') {
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  @include breakpoint('mobile') {
+    width: 100%;
+    padding: 0 12px;
+  }
 }

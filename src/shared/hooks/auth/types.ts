@@ -1,6 +1,5 @@
 export interface MeResponse {
   email: string;
-  username: string;
   id: number;
   role: string;
   credits: number;
@@ -18,7 +17,6 @@ export interface LoginResponse {
 export interface UserData {
   id: number;
   email: string;
-  username: string;
   role: string;
   credits: number;
   is_email_verified: boolean;
@@ -30,14 +28,12 @@ export interface AuthState {
   isAuth: boolean;
   isLoggingOut: boolean;
   isLoadingUser: boolean;
-  user: UserData | null;
-  username: string | null;
+  email: string | null;
 
   setAuth: (isAuth: boolean) => void;
   login: (response: { data: LoginResponse }) => void;
   logout: () => void;
   checkAuth: (refreshToken: string) => Promise<LoginResponse>;
-  setUsername: (username: string) => void;
+  setEmail: (email: string) => void;
   fetchUserData: () => Promise<void>;
-  setUser: (user: UserData) => void;
 }

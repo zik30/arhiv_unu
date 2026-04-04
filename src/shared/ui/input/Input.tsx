@@ -14,7 +14,14 @@ export type InputProps = {
   fullWidth?: boolean;
   error?: boolean;
   icon?: ReactNode;
-  type?: 'text' | 'checkbox' | 'range' | 'radio' | 'password' | 'search';
+  type?:
+    | 'text'
+    | 'checkbox'
+    | 'range'
+    | 'radio'
+    | 'password'
+    | 'search'
+    | 'date';
   helperText?: string;
   disabled?: boolean;
   className?: string;

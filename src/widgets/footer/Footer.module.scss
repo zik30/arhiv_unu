@@ -1,3 +1,5 @@
+@use 'app/styles/mixins' as *;
+
 .footer {
   background-color: var(--black);
   display: flex;
@@ -6,14 +8,29 @@
   gap: 40px;
   padding: 100px 0;
 
+  @include breakpoint('mobile') {
+    padding: 60px 20px;
+    gap: 30px;
+  }
+
   nav {
     display: flex;
     align-items: center;
     gap: 50px;
     color: var(--white);
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @include breakpoint('mobile') {
+      gap: 20px;
+    }
   }
 
   .own {
     color: var(--grey03);
+
+    @include breakpoint('mobile') {
+      text-align: center;
+    }
   }
 }

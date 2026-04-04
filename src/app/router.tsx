@@ -8,6 +8,7 @@ import LoginPage from 'pages/login/LoginPage';
 import RegistrationPage from 'pages/registration/RegistrationPage';
 import GalleryDetailPage from 'pages/GalleryDetailPage';
 import { ChatPage } from 'pages/chat/ChatPage';
+import { CreatePage } from 'pages/CreatePage';
 
 export const router = () =>
   createBrowserRouter([
@@ -34,6 +35,11 @@ export const router = () =>
         {
           path: 'chat',
           element: <ChatPage />,
+        },
+
+        {
+          path: 'create',
+          element: <CreatePage />,
         },
       ],
     },

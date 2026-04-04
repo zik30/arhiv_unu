@@ -3,28 +3,29 @@ import styles from './HeroWidget.module.scss';
 import { Typography } from 'shared/ui/typography/Typography';
 import { Button } from 'shared/ui/button/Button';
 import { CustomInput } from 'shared/ui/input/Input';
+import { useTranslation } from 'react-i18next';
 
 export const HeroWidget: FC = () => {
+  const { t } = useTranslation();
   return (
     <section className={styles.heroSection}>
       <div className={styles.content}>
         <Typography align='center' variant='h1' color='white'>
-          Исследуй архивы!
+          {t('titles.mainPage')}
         </Typography>
         <Typography align='center' variant='bodyText' color='white'>
-          Найди и прочитай истории известных людей Кыргызстана, которые
-          вдохновляют и учат нас.
+          {t('titles.mainPageSubtitle')}
         </Typography>
 
         <div className={styles.searchContainer}>
           <CustomInput
             type='search'
-            placeholder='Искать истории...'
+            placeholder={t('placeholders.searchHistory')}
             fullWidth
             className={styles.searchInput}
           />
           <Button variant='primary' className={styles.searchButton}>
-            Поиск
+            {t('btns.search')}
           </Button>
         </div>
       </div>

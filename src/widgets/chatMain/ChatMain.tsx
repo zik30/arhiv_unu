@@ -5,6 +5,7 @@ import { CustomInput } from 'shared/ui/input/Input';
 import { MessageCircle } from 'lucide-react';
 import classNames from 'classnames';
 import { Typography } from 'shared/ui/typography/Typography';
+import { useTranslation } from 'react-i18next';
 
 const mockMessages = [
   {
@@ -52,6 +53,7 @@ const mockMessages = [
 ];
 
 export const ChatMain: FC = () => {
+  const { t } = useTranslation();
   return (
     <section className={styles.chatMain}>
       <div className={styles.messagesContainer}>
@@ -70,7 +72,7 @@ export const ChatMain: FC = () => {
         ))}
       </div>
       <div className={styles.inputContainer}>
-        <CustomInput fullWidth placeholder='Введите сообщение...' />
+        <CustomInput fullWidth placeholder={t('placeholders.ask')} />
         <Button>
           <MessageCircle />
         </Button>

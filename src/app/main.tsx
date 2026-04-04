@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
 import { router } from './router';
 import './styles/global.scss';
+import 'shared/lib/i18n';
 
 const queryClient = new QueryClient({
   defaultOptions: {
